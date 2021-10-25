@@ -10,13 +10,26 @@
 <body>
     <div id="wrapper">
         <header>
-            <h1>SJ Theatres</h1>
+            <img id='company_logo' src="headerv2.PNG" alt="Logo" width="300px">
+            <table class="social">
+                <tr>
+                    <td>
+                        <p>Follow us</p>
+                    </td>
+                    <td>
+                        <a href="www.facebook.com"><img class="social" src="facebook-logo.jpg" alt="fb-logo" width="37px"></a>
+                    </td>
+                    <td>
+                        <a href="www.instagram.com"><img class="social" src="instagram-logo.png" alt="ig-logo" width="20px"></a>
+                    </td>
+                </tr>
+            </table>
         </header>
         <div id="nav">
             <nav>
                 <ul class="nav">
                     <li class="nav"><a class="active" href="index.html">Home</a></li>
-                    <li class="nav"><a href="movie.html">Movies</a></li>
+                    <li class="nav"><a href="movies.html">Movies</a></li>
                     <li class="nav"><a href="cinema.html">Cinema</a></li>
                     <li class="nav"><a href="checkbooking.html">Check Booking</a></li>
                 </ul>
@@ -25,17 +38,17 @@
         <div class="slideshow-container">
             <div class="mySlides fade">
                 <div class="numbertext">1 / 3</div>
-                <img src="slider_img/img_nature_wide.jpg" style="width:100%">
+                <img src="slider_img/rons.webp" style="width:100%">
             </div>
             
             <div class="mySlides fade">
                 <div class="numbertext">2 / 3</div>
-                <img src="slider_img/img_snow_wide.jpg" style="width:100%">
+                <img src="slider_img/cloudymountain.jpg" style="width:100%">
             </div>
             
             <div class="mySlides fade">
                 <div class="numbertext">3 / 3</div>
-                <img src="slider_img/img_mountains_wide.jpg" style="width:100%">
+                <img src="slider_img/venom2.webp" style="width:100%">
             </div>
             
             <div style="text-align:center">
@@ -63,14 +76,89 @@
         }
         slides[slideIndex-1].style.display = "block";  
         dots[slideIndex-1].className += " active";
-        setTimeout(showSlides, 2000); // Change image every 2 seconds
+        setTimeout(showSlides, 5000); // Change image every 2 seconds
         }
         </script>
-            <div class="content">
-                
+        <div class="content">
+            <div class="tab">
+                <button class="tablinks" onclick="openTab(event, 'Now_Showing')" id="defaultOpen">Now Showing</button>
+                <button class="tablinks" onclick="openTab(event, 'Coming_Soon')">Coming Soon</button>
             </div>
+              <!-- Tab content -->
+              <div id="Now_Showing" class="tabcontent">
+                <h3>Featured</h3>
+                <p>Top block busters only</p>
+                <table class="nowShowing">
+                    <tr>
+                        <td><img src="./posters_small/007.jpg" alt="movie1"></td>
+                        <td><img src="./posters_small/carnage.webp" alt="movie2"></td>
+                        <td><img src="./posters_small/dune.webp" alt="movie3"></td>
+                        <td><img src="./posters_small/mandalorian.jpg" alt="movie4"></td>
+                        <td><img src="./posters_small/shangchi_small.webp" alt="movie5"></td>
+                    </tr>
+                    <tr>
+                        <td><p>007 No Time To Die</p></td>
+                        <td><p>Venom: Let There Be Carnage</p></td>
+                        <td><p>Dune</p></td>
+                        <td><p>The Mandalorian</p></td>
+                        <td><p>ShangChi and The Legend of Ten Rings</p></td>
+                    </tr>
+                </table>
+              </div>
+              
+              <div id="Coming_Soon" class="tabcontent">
+                <h3>Paris</h3>
+                <p>Paris is the capital of France.</p>
+              </div>
+              
+              <div id="EXTRA" class="tabcontent">
+                <h3>Tokyo</h3>
+                <p>Tokyo is the capital of Japan.</p>
+              </div>
+              <script>
+                  function openTab(evt, tabName) {
+                    // Declare all variables
+                    var i, tabcontent, tablinks;
 
+                    // Get all elements with class="tabcontent" and hide them
+                    tabcontent = document.getElementsByClassName("tabcontent");
+                    for (i = 0; i < tabcontent.length; i++) {
+                        tabcontent[i].style.display = "none";
+                    }
+
+                    // Get all elements with class="tablinks" and remove the class "active"
+                    tablinks = document.getElementsByClassName("tablinks");
+                    for (i = 0; i < tablinks.length; i++) {
+                        tablinks[i].className = tablinks[i].className.replace(" active", "");
+                    }
+
+                    // Show the current tab, and add an "active" class to the button that opened the tab
+                    document.getElementById(tabName).style.display = "block";
+                    evt.currentTarget.className += " active";
+                }
+              </script>
+              <script>
+                // Get the element with id="defaultOpen" and click on it
+                document.getElementById("defaultOpen").click();
+              </script>
         </div>
+        <div class="push"></div>
+        <footer class="footer">
+           <table>
+               <tr>
+                   <td><a href="tnc.html"><small><b>Terms and Conditions</b></small></a></td>
+               </tr>
+               <tr>
+                   <td><small><i>By using our servicces, you hereby agree to these terms. When you 
+                       access this website, you acknowledge that you <br>have read and agree to abide by 
+                       the terms described. If you do not agree to the terms, 
+                       you should exit this site. <br>&copy; SJ Groups Company</i></small>
+                       
+                    </td>
+               </tr>
+           </table>
+        </footer>
     </div>
+
 </body>
 </html>
