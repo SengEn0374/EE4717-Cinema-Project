@@ -9,6 +9,7 @@
 </head>
 <body>
     <div id="wrapper">
+
         <header>
             <img id='company_logo' src="headerv2.PNG" alt="Logo" width="300px">
             <table class="social">
@@ -39,7 +40,6 @@
 
         <!-- The Modal -->
         <div id="myModal" class="modal">
-
             <!-- Modal content -->
             <div class="modal-content">
                 <div class="modal-header">
@@ -48,7 +48,7 @@
                 </div>
                 <div class="modal-body">
                     <br>
-                    <form action="post.php"> <!--php script to check method, match detail and fetch data from db-->
+                    <form action="check_booking.php" method="post"> <!--php script to check method, match detail and fetch data from db-->
                         <label for="check_method">Method:&nbsp;</label>
                         <select name="check_method" id="check_method">
                             <option value="email" selected>Email address</option>
@@ -56,11 +56,9 @@
                             <option value="hp">Phone number</option>
                         </select>
                         <br><br>
-                        <input type="text" required>
+                        <input type="text" name="user_detail" id="user_detail" required>
                         <input type="submit" value="Submit">
                     </form>
-                    <br><br><br>
-                    <p>SE: redirect to another page (modified confirmation page)</p>
                 </div>
             </div>
         </div>
@@ -103,7 +101,7 @@
               <!-- "Now Shoing" Tab content -->
               <div id="Now_Showing" class="tabcontent">
                 <br><br><br>
-                <table class="nowShowing_m">
+                <table class="movie_tabs">
                     <tr>
                         <td><img src="./posters_small/007.jpg" alt="movie1"></td>
                         <td><img src="./posters_small/carnage.webp" alt="movie2"></td>
@@ -149,47 +147,47 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><img src="./posters_small/007.jpg" alt="movie1"></td>
-                        <td><img src="./posters_small/carnage.webp" alt="movie2"></td>
-                        <td><img src="./posters_small/dune.webp" alt="movie3"></td>
-                        <td><img src="./posters_small/mandalorian.jpg" alt="movie4"></td>
-                        <td><img src="./posters_small/shangchi_small.webp" alt="movie5"></td>
+                        <td><img src="./posters_small/antlers.jpg" alt="movie1"></td>
+                        <td><img src="./posters_small/Late Night Ride.jpg" alt="movie2"></td>
+                        <td><img src="./posters_small/tokyorevengers.webp" alt="movie3"></td>
+                        <td><img src="./posters_small/ron_small.webp" alt="movie4"></td>
+                        <td><img src="./posters_small/cloudyMountain.jpg" alt="movie5"></td>
                     </tr>
                     <tr>
                         <td>
-                            <p class="movie_title">007 No Time To Die</p>
-                            <small>M16 - some violence</small>
+                            <p class="movie_title">Antlers</p>
+                            <small>M16 - blood and gore</small>
                             <p>112min</p>
                             <p>ENG</p>
-                            <button class="book" id="movie1" type="button">Book</button>
+                            <button class="book" type="button6">Book</button>
                         </td>
                         <td>
-                            <p class="movie_title">Venom: Let There Be Carnage</p>
-                            <small>M18 - gore and violence</small>
+                            <p class="movie_title">Late Night Ride</p>
+                            <small>M18 - violence</small>
                             <p>126min</p>
-                            <p>ENG</p>
-                            <button class="book" id="movie2" type="button">Book</button>
+                            <p>CHI</p>
+                            <button class="book" type="button7">Book</button>
                         </td>
                         <td>
-                            <p class="movie_title">Dune</p>
+                            <p class="movie_title">Tokyo Revengers</p>
                             <small>PG - coarse language</small>
-                            <p>132min</p>
-                            <p>ENG</p>
-                            <button class="book" id="movie3" type="button">Book</button>
+                            <p>121min</p>
+                            <p>JAP</p>
+                            <button class="book" type="button8">Book</button>
                         </td>
                         <td>
-                            <p class="movie_title">The Mandalorian</p>
+                            <p class="movie_title">Ron's Gone Wrong</p>
                             <small>G</small>
-                            <p>102min</p>
+                            <p>107min</p>
                             <p>ENG</p>
-                            <button class="book" id="movie4" type="button">Book</button>
+                            <button class="book" type="button9">Book</button>
                         </td>
                         <td>
-                            <p class="movie_title">ShangChi and The Legend of Ten Rings</p>
+                            <p class="movie_title">Cloudy Mountain</p>
                             <small>PG - mild violence</small>
-                            <p>112min</p>
-                            <p>ENG</p>
-                            <button class="book" type="button5">Book</button>
+                            <p>115min</p>
+                            <p>CHI</p>
+                            <button class="book" type="button9">Book</button>
                         </td>
                     </tr>
                 </table>
@@ -197,13 +195,87 @@
               
               <!-- "Coming Soon" Tab content -->
               <div id="Coming_Soon" class="tabcontent">
-                <h3>Paris</h3>
-                <p>Paris is the capital of France.</p>
-              </div>
-              
-              <div id="EXTRA" class="tabcontent">
-                <h3>Tokyo</h3>
-                <p>Tokyo is the capital of Japan.</p>
+                <br><br><br>
+                <table class="movie_tabs">
+                    <tr>
+                        <td><img src="./posters_small/adams.jpg" alt="movie1"></td>
+                        <td><img src="./posters_small/eternals.jpg" alt="movie2"></td>
+                        <td><img src="./posters_small/lastnight.jpg" alt="movie3"></td>
+                        <td><img src="./posters_small/encanto.jpg" alt="movie4"></td>
+                        <td><img src="./posters_small/belle.jpg" alt="movie5"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="movie_title">The Adams Family 2</p>
+                            <small>G</small>
+                            <p>109min</p>
+                            <p>ENG</p>
+                        </td>
+                        <td>
+                            <p class="movie_title">Marvel Studios's: The Eternals</p>
+                            <small>(Rating to be advised)</small>
+                            <p>115min</p>
+                            <p>ENG</p>
+                        </td>
+                        <td>
+                            <p class="movie_title">Last Night</p>
+                            <small>(Rating to be advised)</small>
+                            <p>-</p>
+                            <p>ENG</p>
+                        </td>
+                        <td>
+                            <p class="movie_title">Disney Pixar's Encanto</p>
+                            <small>G</small>
+                            <p>102min</p>
+                            <p>ENG</p>
+                        </td>
+                        <td>
+                            <p class="movie_title">Belle</p>
+                            <small>G</small>
+                            <p>122min</p>
+                            <p>ENG</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="./posters_small/freeguy.jpg" alt="movie1"></td>
+                        <td><img src="./posters_small/Dont Breathe 2.jpg" alt="movie2"></td>
+                        <td><img src="./posters_small/pils.webp" alt="movie3"></td>
+                        <td><img src="./posters_small/ghostbusters.webp" alt="movie4"></td>
+                        <td><img src="./posters_small/sooryavanshi.webp" alt="movie5"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="movie_title">Free Guy</p>
+                            <small>G</small>
+                            <p>112min</p>
+                            <p>ENG</p>
+                        </td>
+                        <td>
+                            <p class="movie_title">Don't Breathe 2</p>
+                            <small>(Rating to be advised)</small>
+                            <p>-</p>
+                            <p>ENG</p>
+                        </td>
+                        <td>
+                            <p class="movie_title">Pil's Adventure</p>
+                            <small>G</small>
+                            <p>121min</p>
+                            <p>ENG</p>
+                        </td>
+                        <td>
+                            <p class="movie_title">Ghostbusters: Afterlife</p>
+                            <small>(Rating to be advised)</small>
+                            <p>107min</p>
+                            <p>ENG</p>
+                        </td>
+                        <td>
+                            <p class="movie_title">Sooryavanshi</p>
+                            <small>PG - mild violence</small>
+                            <p>115min</p>
+                            <p>HIN</p>
+                        </td>
+                    </tr>
+                </table>
               </div>
               <script>
                   function openTab(evt, tabName) {
