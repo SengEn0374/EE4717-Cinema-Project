@@ -69,6 +69,17 @@
                     WHERE phone='$phone'
                     GROUP BY booking_id";
                 }
+                
+                if ($method =='bookid') {
+                    $attr = 'booking no.';
+                    echo "checking with ".$attr.": ";
+                    $bookid = $_POST['user_detail'];
+                    $bookid = (int)$bookid;
+                    echo $bookid."<br>";
+                    $query = "SELECT * FROM ticketorders
+                    WHERE booking_id='$bookid'
+                    GROUP BY booking_id";
+                }
 
                 $db = mysqli_connect($servername, $username, $password, $dbname);
                 if(!$db) {
@@ -98,11 +109,12 @@
                         echo "<br /><span class='c'>Time : </span>";
                         echo stripslashes($row['timing']);
                         echo "<br /><span class='c'>Seats : </span>";
-
-                        $booking_id = $row['booking_id'];
-                        $query2 = "SELECT * FROM ticketorders WHERE booking_id=$booking_id";
+                        
+                        if ($method=='email'||$method=='hp'){$booking_id = $row['booking_id'];}
+                        else {$booking_id = $bookid;}
+                        $query2 = "SELECT * FROM ticketorders WHERE booking_id='$booking_id'";
                         $result2 = $db->query($query2);
-                        $num_results2 = $result->num_rows;
+                        $num_results2 = $result2->num_rows;
                         for ($j=0; $j <$num_results2; $j++) {
                             $row2 = $result2->fetch_assoc();
                             echo "&nbsp;".$row2['seat']."&nbsp;";
@@ -114,7 +126,8 @@
                     }
                 }
 
-
+                $result->free();
+                $db->close();
                 // echo $row;
                 // // if (count($row))
                 // $book_id = $row['book_id'];

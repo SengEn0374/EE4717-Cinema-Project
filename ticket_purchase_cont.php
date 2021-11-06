@@ -2,8 +2,8 @@
 
 session_start();
 $movie_id = $_SESSION['movie_id'];
-$timing = $_GET['timingButton'];
-$_SESSION['timing'] = $timing;
+// $timing = $_GET['timingButton'];
+// $_SESSION['timing'] = $timing;
 
 $servername = "localhost";
 $username = "f32ee";
@@ -205,6 +205,7 @@ $conn->close();
                         <select name="check_method" id="check_method">
                             <option value="email" selected>E-mail</option>
                             <option value="hp">Phone</option>
+							<option value="bookid">Ref no.</option>
                         </select>
                         <br><br>
                         <input type="text" name="user_detail" id="user_detail" size="25" required placeholder = "enter details here">
